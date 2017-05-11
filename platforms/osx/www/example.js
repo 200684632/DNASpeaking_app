@@ -8,8 +8,10 @@ document.addEventListener("deviceready", onDeviceReady, false);
 // 设备API可以使用了
 //
 function onDeviceReady() {
+    alert('欢迎来到DNASpeaking!');
     $.ajax({
-        url:'http://localhost:8083',
+        url:'localhost:8083',
+        data:{},
         type:'get',
         dataType:'json',
         success:function (data) {
@@ -17,10 +19,10 @@ function onDeviceReady() {
             alert(data);
         },
         error:function (err) {
-            $('#content').html('这是我的测试数据啊啊啊');
             alert(JSON.stringify(err));
         }
     });
+
 }
 
 function onPause() {
