@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready file:; style-src 'self' 'unsafe-inline' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; img-src * data: 'unsafe-inline'">
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <meta name="msapplication-tap-highlight" content="no">
@@ -12,34 +11,37 @@
     <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+    <script src="js/jquery-mobile-navbar.js"></script>
     <title>叙说DNASpeaking</title>
 </head>
 <body>
-<div data-role="page" id="pageone">
+<div data-role="page" id="page">
     <div data-role="header">
+        <a href="#" data-role="button" data-icon="arrow-l" data-rel='back'>返回</a>
+        <h1 onclick="details()">热点</h1>
+    </div>
 
-        <div data-role="navbar" data-position="fixed" data-fullscreen="true">
-            <ul>
-                <li><a href="#" data-role="button" data-icon="arrow-l"></a><input type="text"></li>
-            </ul>
+    <div data-role="content" >
+
+        <div data-role="navbar" id="content">
+
         </div>
-    </div>
+        <ul data-role="listview" data-inset="true" id="content_ul">
 
-    <div data-role="content">
-        <p>该例演示页脚中的导航栏。</p>
+        </ul>
     </div>
-    <div data-role="footer" data-position="fixed" data-fullscreen="true">
+    <div data-role="footer" data-position="fixed">
         <div data-role="navbar" data-iconpos="left">
             <ul>
-                <li><a href="#" data-icon="home">首页</a></li>
-                <li><a href="#" data-icon="star">热点</a></li>
+                <li><a href="index.html" data-icon="home" class="ui-btn-active" data-ajax="false">首页</a></li>
+                <li><a href="hot.html" data-icon="star" data-ajax="false">热点</a></li>
                 <li><a href="#" data-icon="info">我的</a></li>
             </ul>
         </div>
     </div>
 </div>
 <script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="example.js"></script>
+<script type="text/javascript" src="js/index_details.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
