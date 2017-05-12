@@ -24,26 +24,28 @@
         <div data-role="navbar" >
             <ul>
                 <li><input type="search" name="search" id="search" placeholder="搜索内容..."></li>
-                <li><button id="button">提交</button></li>
+                <li><button id="button">搜索</button></li>
             </ul>
         </div>
     </div>
 
     <div data-role="content" id="main">
-
-        <div data-role="navbar" id="content">
-
-        </div>
-        <ul data-role="listview" data-inset="true" id="content_ul">
-
-        </ul>
+        <form method="post" action="demoform.asp">
+            <div data-role="fieldcontain">
+                <label for="fullname">用户名/邮箱：</label>
+                <input type="text" name="fullname" id="fullname">
+                <label for="bday">密码：</label>
+                <input type="password" name="bday" id="bday">
+            </div>
+            <input type="submit" data-inline="true" value="登陆">
+        </form>
     </div>
     <div data-role="footer" data-position="fixed">
         <div data-role="navbar" data-iconpos="left">
             <ul>
-                <li><a href="index.html" data-icon="home"  class="ui-btn-active">首页</a></li>
+                <li><a href="index.html" data-icon="home"  data-ajax="false">首页</a></li>
                 <li><a href="hot.html" data-icon="star" data-ajax="false">热点</a></li>
-                <li><a href="login.html" data-icon="info" data-ajax="false">我的</a></li>
+                <li><a href="login.html" data-icon="info" data-ajax="false"  class="ui-btn-active">我的</a></li>
             </ul>
         </div>
     </div>
@@ -53,3 +55,4 @@
 <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
+
